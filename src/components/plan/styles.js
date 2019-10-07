@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../styles/devices';
 
 export const Container = styled.div`
   position: relative;
@@ -6,6 +7,10 @@ export const Container = styled.div`
   background: #FFFFFF 0% 0% no-repeat padding-box;
   border: 1px solid #DFECFF;
   border-radius: 4px;
+
+  @media ${device.tablet} {
+    margin: 0 5px;
+  }
 
   &::before{
     content: '';
@@ -39,6 +44,7 @@ export const Header = styled.div`
   align-items: center;
   border-bottom: 1px solid #DFECFF;
   height: 100px;
+  width: 350px;
 `;
 
 export const Image = styled.img`
@@ -60,6 +66,7 @@ export const Content = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  width: 350px;
 `;
 
 export const FullPriceContainer = styled.div`
@@ -169,6 +176,7 @@ export const InfoImage = styled.img`
 `;
 
 export const Footer = styled.div`
+  width: 350px;
   height: 180px;
   display: flex;
   justify-content: center;

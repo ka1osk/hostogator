@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
+import { device } from './devices';
 import checked from '../assets/images/checked.svg';
 import unchecked from '../assets/images/unchecked.svg';
 
@@ -123,6 +124,38 @@ export const PlansContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding-top: 10px;
+  
+  @media ${device.tablet} {
+    padding: 10px 20px;
+    overflow-x: scroll;
+  }
+`;
+
+export const PlanLeftArrow = styled.img`
+  position: absolute;
+  display: none;
+  top: 40%;
+  left: 10px;
+  width: 35px;
+  height: 35px;
+
+  @media ${device.tablet} {
+    display: block;
+  }
+`;
+
+export const PlanRightArrow = styled.img`
+  position: absolute;
+  display: none;
+  top: 40%;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+
+  @media ${device.tablet} {
+    display: block;
+  }
 `;
 
 export const InfoTextContainer = styled.div`
@@ -130,6 +163,11 @@ export const InfoTextContainer = styled.div`
   width: 100%;
   justify-content: flex-end;
   margin-top: 20px;
+
+  @media ${device.tablet} {
+    justify-content: center;
+  }
+
 `;
 
 export const InfoText = styled.span`

@@ -10,6 +10,8 @@ import {
   RadioButtonLabel,
   RadioButtonButton,
   PlansContainer,
+  PlanLeftArrow,
+  PlanRightArrow,
   InfoTextContainer,
   InfoText
 } from './styles';
@@ -19,6 +21,8 @@ import Plan from './components/plan';
 import planP from './assets/images/Grupo 29909.svg';
 import planM from './assets/images/Grupo 29910.svg';
 import planT from './assets/images/Grupo 29911.svg';
+import rightArrow from './assets/images/Grupo 31453.svg';
+import leftArrow from './assets/images/Grupo 31454.svg';
 
 export default () => {
   const [periodo, setPeriodo] = useState('trienal');
@@ -111,6 +115,8 @@ export default () => {
           <Plan image={planP} title={'Plano P'} oldPrice={valoresPlanoP.planValue} newPrice={valoresPlanoP.planValueWithDiscount} price={valoresPlanoP.planValuePerMonth} savePrice={valoresPlanoP.planValueSave} siteQty={'Para 1 Site'} storage={'100'}/>
           <Plan image={planM} title={'Plano M'} oldPrice={valoresPlanoM.planValue} newPrice={valoresPlanoM.planValueWithDiscount} price={valoresPlanoM.planValuePerMonth} savePrice={valoresPlanoM.planValueSave} siteQty={'Sites Ilimitados'} storage={'100'} indication={true}/>
           <Plan image={planT} title={'Plano Turbo'} oldPrice={valoresPlanoT.planValue} newPrice={valoresPlanoT.planValueWithDiscount} price={valoresPlanoT.planValuePerMonth} savePrice={valoresPlanoT.planValueSave} siteQty={'Sites Ilimitados'} storage={'150'}/>
+          <PlanLeftArrow src={leftArrow}/>
+          <PlanRightArrow src={rightArrow}/>
         </PlansContainer>
         <InfoTextContainer>
           <InfoText>*Confira as condições da promoção</InfoText>

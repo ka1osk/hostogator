@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import checkIcon from '../../assets/images/icon-check.svg';
+import { device } from '../../styles/devices';
 
 export const Container = styled.div`
   background-color: #fff;
@@ -20,6 +21,9 @@ export const Content = styled.div`
 export const Logo = styled.img`
   width: 198px;
   height: 35px;
+  @media ${device.tablet} {
+    margin-left: 30px;
+  }  
 `;
 
 export const PageHeaderContainer = styled.div`
@@ -58,6 +62,10 @@ export const PageHeaderDeskImage = styled.img`
   left: 68px;
   width: 484px;
   height: 353px;
+
+  @media ${device.tablet} {
+    display: none;
+  }
 `;
 
 export const PageHeaderManImage = styled.img`
@@ -66,6 +74,10 @@ export const PageHeaderManImage = styled.img`
   right: 68px;  
   width: 438px;
   height: 346px;
+
+  @media ${device.tablet} {
+    display: none;
+  }  
 `;
 
 export const PageHeaderContent = styled.div`
