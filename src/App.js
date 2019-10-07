@@ -89,6 +89,18 @@ export default () => {
     setValoresPlanoT(calculatePlan(periodo, planoT));
   }
 
+  const onHandleRightClick = (e) => {
+    const plansContainer = document.getElementById('plansContainer');
+
+    plansContainer.scrollLeft = plansContainer.scrollLeft + 200;
+  }
+
+  const onHandleLeftClick = (e) => {
+    const plansContainer = document.getElementById('plansContainer');
+
+    plansContainer.scrollLeft = plansContainer.scrollLeft - 200;
+  }
+
   return (
     <Container>
       <GlobalStyle />
@@ -111,12 +123,12 @@ export default () => {
             </RadioButtonButtonContainer>
           </RadioButtonContainerContent>
         </RadioButtonContainer>        
-        <PlansContainer>
+        <PlansContainer id="plansContainer"> 
           <Plan image={planP} title={'Plano P'} oldPrice={valoresPlanoP.planValue} newPrice={valoresPlanoP.planValueWithDiscount} price={valoresPlanoP.planValuePerMonth} savePrice={valoresPlanoP.planValueSave} siteQty={'Para 1 Site'} storage={'100'}/>
           <Plan image={planM} title={'Plano M'} oldPrice={valoresPlanoM.planValue} newPrice={valoresPlanoM.planValueWithDiscount} price={valoresPlanoM.planValuePerMonth} savePrice={valoresPlanoM.planValueSave} siteQty={'Sites Ilimitados'} storage={'100'} indication={true}/>
           <Plan image={planT} title={'Plano Turbo'} oldPrice={valoresPlanoT.planValue} newPrice={valoresPlanoT.planValueWithDiscount} price={valoresPlanoT.planValuePerMonth} savePrice={valoresPlanoT.planValueSave} siteQty={'Sites Ilimitados'} storage={'150'}/>
-          <PlanLeftArrow src={leftArrow}/>
-          <PlanRightArrow src={rightArrow}/>
+          <PlanLeftArrow src={leftArrow} onClick={onHandleLeftClick}/>
+          <PlanRightArrow src={rightArrow} onClick={onHandleRightClick}/>
         </PlansContainer>
         <InfoTextContainer>
           <InfoText>*Confira as condições da promoção</InfoText>

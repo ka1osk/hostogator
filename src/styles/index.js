@@ -41,6 +41,10 @@ export const RadioButtonContainer = styled.div`
   width: 325px;
   margin: 0 auto;
   margin-bottom: 50px;
+
+  @media ${device.mobileS} {
+    width: 290px;
+  }
 `;
 
 export const RadioButtonContainerTitle = styled.p`
@@ -69,12 +73,16 @@ export const RadioButtonContainerContent = styled.div`
 export const RadioButtonButtonContainer = styled.div`
   display: flex;
   width: 108px; 
-  justify-content: center; 
+  justify-content: center;
+
+  @media ${device.mobileS} {
+    width: 96px;
+  }  
 `;
 
 export const RadioButtonLabel = styled.label`
   text-align: center;
-  font: Regular 16px/23px Montserrat;
+  font-size:16px;
   letter-spacing: 0;
   color: #16437E;
   opacity: 1;  

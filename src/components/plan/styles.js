@@ -12,6 +12,10 @@ export const Container = styled.div`
     margin: 0 5px;
   }
 
+  @media ${device.mobileS} {
+    width: 266px;
+  }
+
   &::before{
     content: '';
     position: absolute;
@@ -45,6 +49,10 @@ export const Header = styled.div`
   border-bottom: 1px solid #DFECFF;
   height: 100px;
   width: 350px;
+
+  @media ${device.mobileS} {
+    width: 266px;
+  }  
 `;
 
 export const Image = styled.img`
@@ -67,6 +75,10 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   width: 350px;
+
+  @media ${device.mobileS} {
+    width: 266px;
+  }  
 `;
 
 export const FullPriceContainer = styled.div`
@@ -129,6 +141,10 @@ export const Button = styled.a`
   text-decoration: none;
   line-height: 52px;
   margin: 25px 0;
+
+  @media ${device.mobileS} {
+    width: 229px;
+  }  
 `;
 
 export const DomainTextContainer = styled.div`
@@ -148,7 +164,7 @@ export const SaveContainer = styled.div`
 
 export const SaveText = styled.span`
   text-align: left;
-  font: Regular 14px/18px Montserrat;
+  font-size: 14px;
   letter-spacing: 0;
   color: #1D5297;
   opacity: 1;
@@ -181,6 +197,10 @@ export const Footer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media ${device.mobileS} {
+    width: 266px;
+  }  
 `;
 
 export const FooterList = styled.ul`

@@ -21,6 +21,7 @@ export const Content = styled.div`
 export const Logo = styled.img`
   width: 198px;
   height: 35px;
+
   @media ${device.tablet} {
     margin-left: 30px;
   }  
@@ -38,6 +39,10 @@ export const PageHeaderBackground = styled.div`
   background-color: #1d5297;
   display: flex;
   justify-content: center;
+
+  @media ${device.mobileS} { 
+    padding: 0 10px;
+  }
 `;
 
 export const PageHeaderBackgroundWave = styled.div`
@@ -45,6 +50,10 @@ export const PageHeaderBackgroundWave = styled.div`
   overflow: hidden;
   position: relative;
   z-index: 0;
+
+  @media ${device.mobileS} { 
+    height: 40px;
+  }  
 `;
 
 export const PageHeaderBackgroundArrowDown = styled.img`
@@ -54,6 +63,10 @@ export const PageHeaderBackgroundArrowDown = styled.img`
   width: 32px;
   height: 32px;
   transform: translateX(-50%);
+
+  @media ${device.mobileS} {
+    bottom: 10px;
+  }
 `;
 
 export const PageHeaderDeskImage = styled.img`
@@ -95,6 +108,10 @@ export const PageHeaderTitle = styled.p`
   font: SemiBold 16px/27px Montserrat;
   letter-spacing: 1.6px;
   color: #B9D0EF;
+
+  @media ${device.mobileS} { 
+    margin-bottom: 20px;
+  }  
 `;
 
 export const PageHeaderHighlight = styled.p`
@@ -103,6 +120,10 @@ export const PageHeaderHighlight = styled.p`
   letter-spacing: 0;
   color: #FFFFFF;
   opacity: 1;
+
+  @media ${device.mobileS} {
+    font: Bold 24px/32px Montserrat;
+  }  
 `;
 
 export const PageHeaderCheckContainer = styled.div`
@@ -115,16 +136,25 @@ export const PageHeaderCheckContainerRow = styled.div`
   justify-content: center;
   align-items: center;
   height: 25px;
+
+  @media ${device.mobileS} {
+    flex-direction: column;
+    height: auto;
+  }   
 `;
 
 export const PageHeaderCheckText = styled.span`
   position: relative;
   text-align: left;
-  font: Regular 16px/22px Montserrat;
+  font-size: 16px;
   letter-spacing: 0;
   color: #B9D0EF;
   opacity: 1;
   padding: 5px 10px 0px 20px;
+
+  @media ${device.mobileS} {
+    text-align: center;
+  }   
 
   &::before {
     content: '';
