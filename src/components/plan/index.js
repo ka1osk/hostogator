@@ -32,6 +32,7 @@ export default ({
   oldPrice, 
   newPrice, 
   price,
+  savePrice,
   siteQty,
   storage,
   indication
@@ -54,7 +55,7 @@ export default ({
         <DomainText>1 ano de Domínio Grátis.</DomainText>&nbsp;<InfoImage src={infoImage} />
       </DomainTextContainer>
       <SaveContainer>
-        <SaveText>economize R$ 174,48</SaveText>&nbsp;<SaveBadge>40% off</SaveBadge>
+        <SaveText>economize R$ {savePrice}</SaveText>&nbsp;<SaveBadge>40% off</SaveBadge>
       </SaveContainer>
     </Content>
     <Footer>
