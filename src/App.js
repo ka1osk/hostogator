@@ -25,7 +25,7 @@ import rightArrow from './assets/images/Grupo 31453.svg';
 import leftArrow from './assets/images/Grupo 31454.svg';
 
 export default () => {
-  const [periodo, setPeriodo] = useState('trienal');
+  const [periodo, setPeriodo] = useState('triennially');
 
   const [planoP, setPlanoP] = useState(null);
   const [planoM, setPlanoM] = useState(null);
@@ -56,17 +56,17 @@ export default () => {
     let valorPlanoMonth = 0.00;
     let valorPlanoSave = 0.00;
     
-    if (periodo === 'trienal') {
+    if (periodo === 'triennially') {
       valorPlano = plan.cycle.triennially.priceOrder;
       valorPlanoWithDiscount = valorPlano - (valorPlano * 0.4);
       valorPlanoMonth = valorPlanoWithDiscount / plan.cycle.triennially.months;
       valorPlanoSave = valorPlano - valorPlanoWithDiscount;
-    } else if (periodo === 'anual') {
+    } else if (periodo === 'annually') {
         valorPlano = plan.cycle.annually.priceOrder;
         valorPlanoWithDiscount = valorPlano - (valorPlano * 0.4);
         valorPlanoMonth = valorPlanoWithDiscount / plan.cycle.annually.months;
         valorPlanoSave = valorPlano - valorPlanoWithDiscount;
-    } else if (periodo === 'mensal') {
+    } else if (periodo === 'monthly') {
         valorPlano = plan.cycle.monthly.priceOrder;
         valorPlanoWithDiscount = valorPlano - (valorPlano * 0.4);
         valorPlanoMonth = valorPlanoWithDiscount / plan.cycle.monthly.months;
@@ -110,23 +110,23 @@ export default () => {
           <RadioButtonContainerTitle>Quero pagar a cada:</RadioButtonContainerTitle>
           <RadioButtonContainerContent>
             <RadioButtonButtonContainer>
-              <RadioButtonButton name={'periodo'} id='trienal' value={'trienal'} checked={periodo === 'trienal'} onChange={onHandlePeriodo} />
+              <RadioButtonButton name={'periodo'} id='trienal' value={'triennially'} checked={periodo === 'triennially'} onChange={onHandlePeriodo} />
               <RadioButtonLabel htmlFor='trienal'>3 anos</RadioButtonLabel>
             </RadioButtonButtonContainer>
             <RadioButtonButtonContainer>
-              <RadioButtonButton name={'periodo'} id='anual' value={'anual'} checked={periodo === 'anual'} onChange={onHandlePeriodo} />
+              <RadioButtonButton name={'periodo'} id='anual' value={'annually'} checked={periodo === 'annually'} onChange={onHandlePeriodo} />
               <RadioButtonLabel htmlFor='anual'>1 ano</RadioButtonLabel>
             </RadioButtonButtonContainer>
             <RadioButtonButtonContainer>
-              <RadioButtonButton name={'periodo'} id='mensal' value={'mensal'} checked={periodo === 'mensal'} onChange={onHandlePeriodo} />
+              <RadioButtonButton name={'periodo'} id='mensal' value={'monthly'} checked={periodo === 'monthly'} onChange={onHandlePeriodo} />
               <RadioButtonLabel htmlFor='mensal'>1 mês</RadioButtonLabel>
             </RadioButtonButtonContainer>
           </RadioButtonContainerContent>
         </RadioButtonContainer>        
         <PlansContainer id="plansContainer"> 
-          <Plan image={planP} title={'Plano P'} oldPrice={valoresPlanoP.planValue} newPrice={valoresPlanoP.planValueWithDiscount} price={valoresPlanoP.planValuePerMonth} savePrice={valoresPlanoP.planValueSave} siteQty={'Para 1 Site'} storage={'100'}/>
-          <Plan image={planM} title={'Plano M'} oldPrice={valoresPlanoM.planValue} newPrice={valoresPlanoM.planValueWithDiscount} price={valoresPlanoM.planValuePerMonth} savePrice={valoresPlanoM.planValueSave} siteQty={'Sites Ilimitados'} storage={'100'} indication={true}/>
-          <Plan image={planT} title={'Plano Turbo'} oldPrice={valoresPlanoT.planValue} newPrice={valoresPlanoT.planValueWithDiscount} price={valoresPlanoT.planValuePerMonth} savePrice={valoresPlanoT.planValueSave} siteQty={'Sites Ilimitados'} storage={'150'}/>
+          <Plan image={planP} planLink={`a=add&pid=${planoP && planoP.id}&billingcycle=${periodo}&promocode=renatoosaka`} title={'Plano P'} oldPrice={valoresPlanoP.planValue} newPrice={valoresPlanoP.planValueWithDiscount} price={valoresPlanoP.planValuePerMonth} savePrice={valoresPlanoP.planValueSave} siteQty={'Para 1 Site'} storage={'100'}/>
+          <Plan image={planM} planLink={`a=add&pid=${planoM && planoM.id}&billingcycle=${periodo}&promocode=renatoosaka`} title={'Plano M'} oldPrice={valoresPlanoM.planValue} newPrice={valoresPlanoM.planValueWithDiscount} price={valoresPlanoM.planValuePerMonth} savePrice={valoresPlanoM.planValueSave} siteQty={'Sites Ilimitados'} storage={'100'} indication={true}/>
+          <Plan image={planT} planLink={`a=add&pid=${planoT && planoT.id}&billingcycle=${periodo}&promocode=renatoosaka`} title={'Plano Turbo'} oldPrice={valoresPlanoT.planValue} newPrice={valoresPlanoT.planValueWithDiscount} price={valoresPlanoT.planValuePerMonth} savePrice={valoresPlanoT.planValueSave} siteQty={'Sites Ilimitados'} storage={'150'}/>
           <PlanLeftArrow src={leftArrow} onClick={onHandleLeftClick}/>
           <PlanRightArrow src={rightArrow} onClick={onHandleRightClick}/>
         </PlansContainer>

@@ -27,7 +27,8 @@ import {
 import infoImage from '../../assets/images/Componente 4.svg';
 
 export default ({
-  image, 
+  image,
+  planLink,
   title, 
   oldPrice, 
   newPrice, 
@@ -50,7 +51,7 @@ export default ({
       <PriceContainer>
         <PriceLabel>R$</PriceLabel><Price>{price}</Price><PriceLabel>/mês*</PriceLabel>
       </PriceContainer>
-      <Button href="#" indication={indication}>Contrate Agora</Button>
+      <Button href={`?${planLink}`} indication={indication}>Contrate Agora</Button>
       <DomainTextContainer>
         <DomainText>1 ano de Domínio Grátis.</DomainText>&nbsp;<InfoImage src={infoImage} />
       </DomainTextContainer>
